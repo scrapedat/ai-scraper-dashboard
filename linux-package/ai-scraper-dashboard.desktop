@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=AI Scraper Dashboard
+Comment=Human-AI collaborative web scraping dashboard
+Exec=/opt/ai-scraper-dashboard/launch.sh
+Icon=applications-internet
+Terminal=false
+Categories=Network;Development;
