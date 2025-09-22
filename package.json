@@ -1,0 +1,124 @@
+{
+  "name": "ai-scraper-dashboard",
+  "version": "1.0.0",
+  "description": "Human-AI collaborative desktop application for intelligent web scraping",
+  "main": "dist/main.js",
+  "homepage": "./",
+  "scripts": {
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "dev": "concurrently \"npm run dev:webpack\" \"npm run dev:electron\"",
+    "dev:webpack": "webpack serve --mode development",
+    "dev:electron": "wait-on http://localhost:3000 && electron dist/main.js",
+    "electron": "electron dist/main.js",
+    "package": "electron-builder",
+    "package:all": "electron-builder -mwl",
+    "package:mac": "electron-builder --mac",
+    "package:win": "electron-builder --win",
+    "package:linux": "electron-builder --linux",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "scraping",
+    "ai",
+    "automation",
+    "electron",
+    "react",
+    "typescript",
+    "mqtt",
+    "dashboard"
+  ],
+  "author": "scrapedat",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^38.1.2",
+    "mqtt": "^5.14.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "zustand": "^5.0.1",
+    "recharts": "^2.13.3",
+    "lucide-react": "^0.451.0",
+    "date-fns": "^4.1.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.5.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/preset-typescript": "^7.27.1",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@types/node": "^22.9.0",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
+    "autoprefixer": "^10.4.20",
+    "babel-loader": "^10.0.0",
+    "concurrently": "^9.1.0",
+    "css-loader": "^7.1.2",
+    "electron-builder": "^26.0.12",
+    "eslint": "^9.15.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "html-webpack-plugin": "^5.6.4",
+    "jest": "^29.7.0",
+    "postcss": "^8.5.2",
+    "postcss-loader": "^8.1.1",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^3.5.7",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.9.2",
+    "wait-on": "^8.0.1",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.1.0"
+  },
+  "build": {
+    "appId": "com.scrapedat.ai-scraper-dashboard",
+    "productName": "AI Scraper Dashboard",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ]
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    }
+  }
+}
