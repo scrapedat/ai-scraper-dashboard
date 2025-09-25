@@ -44,7 +44,8 @@
     "lucide-react": "^0.400.0",
     "date-fns": "^3.0.0",
     "clsx": "^2.1.1",
-    "tailwind-merge": "^2.5.4"
+    "tailwind-merge": "^2.5.4",
+    "immer": "^10.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.28.4",

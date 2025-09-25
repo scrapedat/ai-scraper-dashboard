@@ -1,15 +1,17 @@
 # �� AI Scraper Dashboard - GitHub Copilot Instructions
 
 ## Project Overview
-**AI Scraper Dashboard** is a Human-AI collaborative desktop application for managing and monitoring intelligent web scraping operations. Built with Electron + React + TypeScript, it provides a modern interface for controlling RunPod AI Scraper VMs via MQTT communication.
+**AI Scraper Dashboard** is a Human-AI collaborative desktop application for managing and monitoring intelligent web scraping operations - web browsing and eventually training models. It provides a modern interface for changing how humans view data, URLs, videos, images, and other content from the web. The dashboard connects to a fleet of AI-powered scraper VMs - multipass, mqtt  real-time communication. It integrates with FrankensteinDB for website DNA intelligence and uses OpenAI or local LLMs for AI collaboration. You can think of it as a blend of a task manager, real-time monitoring tool, and AI assistant for web scraping. No website scraping is done in the dashboard itself - it is purely a control and monitoring interface, meant to be a customizable dashboard for users to manage their work and collaborate with AI.  
 
 ## 🏗️ Architecture & Tech Stack
 
 ### **Core Framework**
-- **Electron**: Cross-platform desktop application
+- **Electron**: Cross-platform desktop application and web app
+- **Vite**: Fast build tool and development server  
 - **React 19.1**: Modern UI library with hooks and concurrent features
 - **TypeScript 5.9**: Type-safe development with latest language features
-- **Tailwind CSS + Shadcn/ui**: Modern styling and component library
+- **User Interface**: Shadcn/ui components with Tailwind CSS for styling - highly customizable and responsive design
+Data export directly to training for models, in a VM or locally. The dashboard itself does not do any scraping or data processing. You can ask AI to gather any data and structure it for you, but the actual scraping is done in the VMs by AI, its an easier and more efficient way to manage and monitor the scraping process without needing to code or manage infrastructure.
 
 ### **State Management**
 - **Zustand**: Lightweight state management for React
